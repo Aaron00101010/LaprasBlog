@@ -1,23 +1,53 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="page-container">
+      <c-menu></c-menu>
+      <div class="page-content">
+        <router-view></router-view>
+      </div>
+    </div>
+    <c-footer></c-footer>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  import CMenu from './components/common/CMenu'
+  import CFooter from './components/common/CFooter'
+
+  export default {
+    name: 'App',
+    components: {
+      CMenu,
+      CFooter
+    },
+    data() {
+      return {
+        transitionName: ''
+      }
+    }
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang='scss' scoped>
+  @import '@/css/var.scss';
+  @import '@/css/animation.scss';
+
+  #app {
+    height: 100%;
+  }
+  .page-container {
+    height: 100%;
+    margin-bottom: -$footer-height;
+    &::after {
+      content: '';
+      display: block;
+      height: $footer-height;
+    }
+  }
+  .page-content {
+    margin: 0 auto;
+    max-width: $page-max-width;
+    margin: 20px 15px;
+    position: relative;
+  }
 </style>

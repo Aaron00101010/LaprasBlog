@@ -1,0 +1,15 @@
+@import '@/css/var.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $primary-text-color;
+}
+html,
+body {
+  height: 100%;
+  background-color: $bg-color;
+}
+a {
+  text-decoration: none;
+}
