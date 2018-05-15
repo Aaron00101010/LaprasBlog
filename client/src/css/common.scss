@@ -1,15 +1,18 @@
-@import '@/css/var.scss';
+@import "@/css/var.scss";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: $primary-text-color;
 }
 html,
 body {
   height: 100%;
   background-color: $bg-color;
+  font-family: "Microsoft YaHei", "san-serf";
 }
 a {
   text-decoration: none;
+}
+li {
+  list-style: none;
 }
