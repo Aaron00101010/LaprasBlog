@@ -6,9 +6,9 @@
         <router-view></router-view>
       </div>
     </div>
-    <c-footer></c-footer>
+    <c-footer></c-footer> 
   </div>
-</template>
+</template> 
 
 <script>
   import CMenu from './components/common/CMenu'
@@ -27,27 +27,25 @@
     }
   }
 </script>
-
 <style lang='scss' scoped>
-  @import '@/css/var.scss';
-  @import '@/css/animation.scss';
-
+  @import "@/css/var.scss";
+  @import "@/css/animation.scss";
   #app {
-    height: 100%;
+      height: 100%;
   }
   .page-container {
-    height: 100%;
-    margin-bottom: -$footer-height;
-    &::after {
-      content: '';
-      display: block;
-      height: $footer-height;
-    }
+      height: 100%;
+      margin-bottom: -$footer-height;
+      &::after {
+          content: "";
+          display: block;
+          height: $footer-height;
+      }
   }
   .page-content {
-    margin: 0 auto;
-    max-width: $page-max-width;
-    margin: 20px 15px;
-    position: relative;
+      margin: 0 auto;
+      max-width: $page-max-width;
+      margin: 20px 15px;
+      position: relative;
   }
 </style>

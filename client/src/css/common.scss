@@ -1,15 +1,32 @@
+<<<<<<< HEAD
 @import '@/css/var.scss';
+=======
+@import "@/css/var.scss";
+>>>>>>> dev
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+<<<<<<< HEAD
   color: $primary-text-color;
+=======
+>>>>>>> dev
 }
 html,
 body {
   height: 100%;
   background-color: $bg-color;
+<<<<<<< HEAD
+=======
+  font-family: "Microsoft YaHei", "san-serf";
+>>>>>>> dev
 }
 a {
   text-decoration: none;
 }
+<<<<<<< HEAD
+=======
+li {
+  list-style: none;
+}
+>>>>>>> dev
