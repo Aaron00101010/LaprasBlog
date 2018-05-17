@@ -30,33 +30,39 @@
     }
 </script>
 <style lang="scss" scoped>
-    @import "@/css/var.scss";
+    @import '@/css/var.scss';
     .content-wrapper {
-        width: 100%;
-        display: flex;
+      width: 100%;
+      display: flex;
     }
     .artical-list-box {
-        flex-shrink: 1;
+      flex-shrink: 1;
     }
     .side-bar-box {
-        width: 269px;
-        margin-left: 10px;
+      width: 269px;
+      margin-left: 10px;
     }
     .pager {
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
     }
     .pager__btn {
-        display: block;
-        line-height: 3;
-        background: #fff;
-        font-weight: bold;
-        width: 150px;
-        text-align: center;
-        transition: color, background-color 0.3s;
-        &:hover {
-            color: #fff;
-            background-color: $primary-color;
-        }
+      display: block;
+      line-height: 3;
+      background: #fff;
+      font-weight: bold;
+      width: 150px;
+      text-align: center;
+      transition: color, background-color 0.3s;
+      &:hover {
+        color: #fff;
+        background-color: $primary-color;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .side-bar-box {
+        display: none;
+      }
     }
 </style>

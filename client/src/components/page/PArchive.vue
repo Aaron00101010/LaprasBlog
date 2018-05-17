@@ -27,17 +27,18 @@
     }
 </script>
 <style lang="scss" scoped>
-    @import "@/css/var.scss";
+    @import '@/css/var.scss';
+    @import '@/css/mixin.scss';
     .archive {
-        background: #fff;
-        box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
-        padding: 20px;
+      background: #fff;
+      @include cardShadow();
+      padding: 20px;
     }
     .archive__tit {
-        line-height: 1;
-        margin-bottom: 20px;
+      line-height: 1;
+      margin-bottom: 20px;
     }
     .year {
-        color: $secondary-text-color;
+      color: $secondary-text-color;
     }
 </style>
