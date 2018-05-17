@@ -30,12 +30,11 @@
 <style lang='scss' scoped>
   @import "@/css/var.scss";
   @import "@/css/animation.scss";
-
   #app {
       height: 100%;
   }
   .page-container {
-      min-height: 100%;
+      height: 100%;
       margin-bottom: -$footer-height;
       &::after {
           content: "";

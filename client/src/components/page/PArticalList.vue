@@ -1,4 +1,16 @@
 <template>
+<<<<<<< HEAD
+    <div class='artical-list-box'>
+        artical-list1
+    </div>
+</template>
+<script>
+    export default {
+      name: 'PArticalList'
+    }
+</script>
+<style lang="scss" scoped>
+=======
     <div class="content-wrapper">
         <div class='artical-list-box'>
             <m-artical-item></m-artical-item>
@@ -65,4 +77,5 @@
         display: none;
       }
     }
+>>>>>>> dev
 </style>

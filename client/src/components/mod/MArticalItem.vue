@@ -1,4 +1,8 @@
 <template>
+<<<<<<< HEAD
+    
+</template>
+=======
     <div class="artical-item">
         <h2 class="item__tit">{{title}}</h2>
         <h4 class="item__subtit">{{subtit}}</h4>
@@ -63,3 +67,4 @@
         color: $primary-color;
     }
 </style>
+>>>>>>> dev

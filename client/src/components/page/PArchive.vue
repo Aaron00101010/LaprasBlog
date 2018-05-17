@@ -22,23 +22,24 @@
 </template>
 
 <script>
-    export default {
-      name: 'PArchive'
-    }
+export default {
+  name: 'PArchive'
+}
 </script>
 <style lang="scss" scoped>
-    @import '@/css/var.scss';
-    @import '@/css/mixin.scss';
-    .archive {
-      background: #fff;
-      @include cardShadow();
-      padding: 20px;
-    }
-    .archive__tit {
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-    .year {
-      color: $secondary-text-color;
-    }
+@import '@/css/var.scss';
+@import '@/css/mixin.scss';
+
+.archive {
+  background: #fff;
+  @include cardShadow();
+  padding: 20px;
+}
+.archive__tit {
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.year {
+  color: $secondary-text-color;
+}
 </style>
