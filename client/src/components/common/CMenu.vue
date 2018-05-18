@@ -77,10 +77,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-<<<<<<< HEAD
-    @import '@/css/var.scss';
-=======
-<<<<<<< HEAD
     @import '@/css/var.scss';
     .wrapper {
       box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
@@ -94,9 +90,6 @@ export default {
       max-width: $page-max-width;
       padding: 0 15px;
       height: 44px;
-=======
-    @import "@/css/var.scss";
->>>>>>> c9946c89b78f8877a51e76bd5057e4cb1943dace
     .wrapper {
       box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
       background-color: $primary-color-text;
@@ -256,4 +249,5 @@ export default {
         }
       }
     }
+}
 </style>
