@@ -2,19 +2,28 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import PHomePage from '@/components/page/PHomePage'
+import PEditor from '@/components/page/PEditor'
+
 import PLogin from '@/components/page/PLogin'
 
 Vue.use(Router)
 
 const routes = [
   {
-    name: 'homePage',
-    path: '/',
-    component: PHomePage
+    name: 'home',
+    path: '/home',
+    component: PHomePage,
+    children: [
+      {
+        name: 'editor',
+        path: 'editor',
+        component: PEditor
+      }
+    ]
   },
   {
     name: 'login',
-    path: '/login',
+    path: '/',
     component: PLogin
   }
 ]
