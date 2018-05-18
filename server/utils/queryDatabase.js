@@ -4,7 +4,7 @@ const { databaseConnectConfig, databaseName } = require('../config/');
 const poolConfig = Object.assign(databaseConnectConfig, databaseName);
 const connectPool = mysql.createPool(databaseConnectConfig);
 
-module.exports = function getData(sqlQuery) {
+module.exports = function(sqlQuery) {
   return new Promise(function(reslove, reject) {
     connectPool.getConnection(function(err, conn) {
       conn.release();
