@@ -4,15 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node --experimental-modules index.mjs"
+    "server": "nodemon --inspect index.js",
+    "start": "npm run server"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "glob": "^7.1.2",
     "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
     "koa-cors": "0.0.16",
+    "koa-jwt": "^3.3.2",
     "koa-router": "^7.4.0",
+    "md5": "^2.2.1",
     "mysql": "^2.15.0"
   },
   "devDependencies": {
