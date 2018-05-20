@@ -11,13 +11,6 @@
           </el-select>
         </el-col>
       </el-col>
-<<<<<<< HEAD
-      <div class="operate-btns">
-        <el-button type="danger">保存</el-button>
-        <el-button type="primary">发布</el-button>
-        <el-button type="success">隐藏</el-button>
-      </div>
-=======
       <el-dropdown>
         <span class="el-dropdown-link">
           操作<i class="el-icon-arrow-down el-icon--right"></i>
@@ -28,18 +21,13 @@
           <el-dropdown-item>隐藏</el-dropdown-item>
         </el-dropdown-menu>
         </el-dropdown>
->>>>>>> dev
     </el-row>
   </div>
 </template>
 <script>
 export default {
   name: 'MEditorSetting',
-<<<<<<< HEAD
   data () {
-=======
-  data: function () {
->>>>>>> dev
     return {
       title: '',
       tags: {
@@ -64,17 +52,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-<<<<<<< HEAD
-  .setting-wrapper {
-    padding: 10px;
-  }
-  .tag-selector {
-    width: 100%;
-  }
-  .operate-btns {
-    align-self: flex-end;
-  }
-=======
 .setting-wrapper {
   padding: 10px 20px 10px 10px;
 }
@@ -94,5 +71,4 @@ export default {
 .el-dropdown-menu {
   margin-top: -5px;
 }
->>>>>>> dev
 </style>
