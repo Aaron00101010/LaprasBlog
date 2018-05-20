@@ -33,56 +33,61 @@
 </template>
 
 <script>
-const menuList = [
-  {
-    name: 'Home',
-    index: 0,
-    link: { name: 'articalList' }
-  },
-  {
-    name: 'Archive',
-    index: 1,
-    link: { name: 'archive' }
-  },
-  {
-    name: 'Tags',
-    index: 2,
-    link: { name: 'tags' }
-  },
-  {
-    name: 'About',
-    index: 3,
-    link: { name: 'about' }
-  }
-]
+    const menuList = [
+      {
+        name: 'Home',
+        index: 0,
+        link: { name: 'articalList' }
+      },
+      {
+        name: 'Archive',
+        index: 1,
+        link: { name: 'archive' }
+      },
+      {
+        name: 'Tags',
+        index: 2,
+        link: { name: 'tags' }
+      },
+      {
+        name: 'About',
+        index: 3,
+        link: { name: 'about' }
+      }
+    ]
 
-export default {
-  name: 'c-menu',
-  data: function () {
-    return {
-      activeIndex: 0,
-      mobileMenuActive: false,
-      menuList
+    export default {
+      name: 'c-menu',
+      data: function() {
+        return {
+          activeIndex: 0,
+          mobileMenuActive: false,
+          menuList
+        }
+      },
+      methods: {
+        setIndex(index) {
+          this.activeIndex = index
+        },
+        toggleMenu() {
+          this.mobileMenuActive = !this.mobileMenuActive
+        }
+      }
     }
-  },
-  methods: {
-    setIndex (index) {
-      this.activeIndex = index
-    },
-    toggleMenu () {
-      this.mobileMenuActive = !this.mobileMenuActive
-    }
-  }
-}
 </script>
 
 <style lang="scss" scoped>
+<<<<<<< HEAD
     @import '@/css/var.scss';
+=======
+    @import "@/css/var.scss";
+>>>>>>> dev
     .wrapper {
-      box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
-      background-color: $primary-color-text;
+        box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+        background-color: $primary-color-text;
     }
     .nav-con {
+<<<<<<< HEAD
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -90,12 +95,21 @@ export default {
       max-width: $page-max-width;
       padding: 0 15px;
       height: 44px;
+=======
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: $page-max-width;
+        padding: 0 15px;
+        height: 44px;
+    }
+>>>>>>> dev
     .wrapper {
-      box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
-      background-color: $primary-color-text;
+        box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+        background-color: $primary-color-text;
     }
     .nav-con {
-
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -107,147 +121,145 @@ export default {
     .logo {
     }
     .logo__title {
-
-      color: $primary-text-color;
+        color: $primary-text-color;
     }
 
     .menu {
-      display: flex;
-      .menu__link {
-        font-size: 14px;
-        display: block;
-        color: $secondary-text-color;
-        padding: 10px 15px;
-        border-top: 3px solid transparent;
-        border-bottom: 3px solid transparent;
-        transition: color, border-bottom-color 0.2s;
-      }
-      .menu__link:hover {
-        color: $primary-color;
-      }
-      .menu__link_active {
-        border-bottom-color: $primary-color;
-        color: $primary-color;
-      }
+        display: flex;
+        .menu__link {
+            font-size: 14px;
+            display: block;
+            color: $secondary-text-color;
+            padding: 10px 15px;
+            border-top: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            transition: color, border-bottom-color 0.2s;
+        }
+        .menu__link:hover {
+            color: $primary-color;
+        }
+        .menu__link_active {
+            border-bottom-color: $primary-color;
+            color: $primary-color;
+        }
     }
 
     .menu-mobile {
-      display: none;
+        display: none;
     }
 
     @media only screen and (max-width: 767px) {
-      .menu {
-        display: none;
-      }
-      .menu-mobile {
-        display: block;
-        cursor: pointer;
-        position: relative;
-        height: 30px;
-        width: 30px;
-        transition: background-color 0.2s;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        user-select:none;
-        &:active {
-          background-color: lighten($divider-color, 10%);
+        .menu {
+            display: none;
         }
-      }
+        .menu-mobile {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            height: 30px;
+            width: 30px;
+            transition: background-color 0.2s;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            &:active {
+                background-color: lighten($divider-color, 10%);
+            }
+        }
 
         color: $primary-text-color;
-
     }
 
     .menu {
-      display: flex;
-      .menu__link {
-        font-size: 16px;
-        font-weight: bold;
-        display: block;
-        cursor: pointer;
-        color: $secondary-text-color;
-        padding: 10px 15px;
-        border-top: 3px solid transparent;
-        border-bottom: 3px solid transparent;
-        transition: color, border-bottom-color 0.2s;
-      }
-      .menu__link:hover {
-        color: $primary-color;
-      }
-      .menu__link_active {
-        border-bottom-color: $primary-color;
-        color: $primary-color;
-      }
+        display: flex;
+        .menu__link {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            cursor: pointer;
+            color: $secondary-text-color;
+            padding: 10px 15px;
+            border-top: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            transition: color, border-bottom-color 0.2s;
+        }
+        .menu__link:hover {
+            color: $primary-color;
+        }
+        .menu__link_active {
+            border-bottom-color: $primary-color;
+            color: $primary-color;
+        }
     }
 
     .menu-mobile {
-      display: none;
+        display: none;
     }
 
     @media only screen and (max-width: 767px) {
-      .menu {
-        display: none;
-      }
-      .menu-mobile {
-        display: block;
-        cursor: pointer;
-        position: relative;
-        height: 30px;
-        width: 30px;
-        transition: background-color 0.2s;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        user-select: none;
-        &:active {
-          background-color: lighten($divider-color, 10%);
+        .menu {
+            display: none;
         }
-      }
-      .menu-mobile__list {
-        position: absolute;
-        right: 5px;
-        top: 30px;
-        background-color: $primary-color;
-        border-radius: 5px;
-        display: none;
-        height: 0;
-        width: 0;
-        transition: height, width 0.3s;
-        overflow: hidden;
-        z-index: 9999;
-        .list__link {
-          color: $primary-color-text;
-          display: block;
-          width: 100px;
-          text-align: center;
-          line-height: 2;
-          transition: background-color 0.15s;
-          cursor: pointer;
-          &:active {
-            background-color: $primary-color-dark;
-          }
+        .menu-mobile {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            height: 30px;
+            width: 30px;
+            transition: background-color 0.2s;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            &:active {
+                background-color: lighten($divider-color, 10%);
+            }
         }
-      }
-      .menu-mobile__list_active {
-        display: block;
-        width: 100px;
-        height: auto;
-      }
-      .menu-mobile__btn {
-        height: 18px;
-        width: 20px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        & > span {
-          height: 2px;
-          background-color: $primary-text-color;
-          width: 100%;
+        .menu-mobile__list {
+            position: absolute;
+            right: 5px;
+            top: 30px;
+            background-color: $primary-color;
+            border-radius: 5px;
+            display: none;
+            height: 0;
+            width: 0;
+            transition: height, width 0.3s;
+            overflow: hidden;
+            z-index: 9999;
+            .list__link {
+                color: $primary-color-text;
+                display: block;
+                width: 100px;
+                text-align: center;
+                line-height: 2;
+                transition: background-color 0.15s;
+                cursor: pointer;
+                &:active {
+                    background-color: $primary-color-dark;
+                }
+            }
         }
-      }
+        .menu-mobile__list_active {
+            display: block;
+            width: 100px;
+            height: auto;
+        }
+        .menu-mobile__btn {
+            height: 18px;
+            width: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            & > span {
+                height: 2px;
+                background-color: $primary-text-color;
+                width: 100%;
+            }
+        }
     }
 }
 </style>
