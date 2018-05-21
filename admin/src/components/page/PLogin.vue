@@ -1,14 +1,14 @@
 <template>
   <div class="login-wrapper">
     <el-card class="box-card">
-      <h2 class="login-tit">用户登录</h2>
-      <form action="./2">
+      <router-link to='/home'>
+      <h2 class="login-tit">登录</h2>
+      </router-link>
+      <form>
         <el-input v-model="userName" placeholder="请输入用户名"></el-input>
         <el-input type="password" v-model="password" placeholder="请输入密码"></el-input>
         <el-col :span="20" :offset="2">
-          <router-link :to="{name:'home'}">
-            <el-button @click="login" native-type="button" type="primary">登录</el-button>
-          </router-link>
+          <el-button @click.prevent="login" native-type="button" type="primary">登录</el-button>
         </el-col>
       </form>
     </el-card>
@@ -31,11 +31,13 @@ export default {
           userName: this.userName,
           password: this.password
         })
-        .then(val => {
-          if (val.success) {
+        .then(response => {
+          let res = response.data
+          if (res.success) {
+            this.$store.commit('user/login')
             this.$router.push({ name: 'editor' })
           } else {
-            console.log(val.error)
+            console.log(res.error)
           }
         })
     }

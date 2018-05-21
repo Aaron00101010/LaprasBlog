@@ -4,8 +4,8 @@
       <router-link :to="{name:'editor'}">
         <div class="menu-item">📄</div>
       </router-link>
-      <router-link to='/'>
-        <div class="menu-item">🌈</div>
+      <router-link :to="{name:'home'}">
+        <div class="menu-item">📦</div>
       </router-link>
     </el-aside>
     <el-main class="content">

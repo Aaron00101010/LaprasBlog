@@ -5,10 +5,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 
-import router from './router/'
-import store from './store/'
+import store from '@/store/'
+import router from '@/router/'
 
-import App from './App'
+import App from '@/App'
 
 Vue.config.productionTip = false
 
