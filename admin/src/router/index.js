@@ -3,10 +3,6 @@ import Router from 'vue-router'
 
 import PHomePage from '@/components/page/PHomePage'
 import PEditor from '@/components/page/PEditor'
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 import PLogin from '@/components/page/PLogin'
 
 Vue.use(Router)
