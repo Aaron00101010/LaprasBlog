@@ -1,3 +1,3 @@
 export default {
-  isLogin: true
+
 }
