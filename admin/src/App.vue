@@ -12,16 +12,15 @@ export default {
       return this.$store.state.isLogin
     }
   },
-  components: {
-  }
+  components: {}
 }
 </script>
 
 <style lang='scss'>
-@import '@/css/common.scss';
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-}
+  @import '@/css/common.scss';
+  #app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+  }
 </style>

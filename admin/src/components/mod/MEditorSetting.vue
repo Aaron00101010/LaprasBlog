@@ -13,14 +13,15 @@
       </el-col>
       <el-dropdown>
         <span class="el-dropdown-link">
-          操作<i class="el-icon-arrow-down el-icon--right"></i>
+          操作
+          <i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>保存</el-dropdown-item>
           <el-dropdown-item>发布</el-dropdown-item>
           <el-dropdown-item>隐藏</el-dropdown-item>
         </el-dropdown-menu>
-        </el-dropdown>
+      </el-dropdown>
     </el-row>
   </div>
 </template>
@@ -52,23 +53,23 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.setting-wrapper {
-  padding: 10px 20px 10px 10px;
-}
-.tag-selector {
-  width: 100%;
-}
-.operate-btns {
-  align-self: flex-end;
-}
-.el-dropdown-link {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.el-dropdown-menu {
-  margin-top: -5px;
-}
+  .setting-wrapper {
+    padding: 10px 20px 10px 10px;
+  }
+  .tag-selector {
+    width: 100%;
+  }
+  .operate-btns {
+    align-self: flex-end;
+  }
+  .el-dropdown-link {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .el-dropdown-menu {
+    margin-top: -5px;
+  }
 </style>

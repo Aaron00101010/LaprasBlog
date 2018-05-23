@@ -4,9 +4,9 @@
       <el-button type="warning">新建文章</el-button>
     </div>
     <ul class="list">
-      <li class="list-item" v-for="item in articalList" :key="item.id">
+      <li class="list-item" @click="articalDetail(item.id)" v-for="item in articalList" :key="item.id">
         <p class="artical-title">{{item.title}}</p>
-        <p class="artical-date">date:{{item.date}}</p>
+        <p class="artical-date">{{item.createTime}}</p>
         <p class="artical-preview">{{item.preview}}</p>
       </li>
     </ul>
@@ -17,23 +17,30 @@ export default {
   name: 'MEditorArticalList',
   data () {
     return {
-      articalList: [
-        {
-          id: 10,
-          title: '关于的看法垃圾的',
-          date: '2017-06-08 11:00:23',
-          preview:
-              '阿第克法拉第考虑是否就爱看十点零分短发的首付贷款首付骄傲劳动节快乐'
-        },
-        {
-          id: 11,
-          title: 'rua',
-          date: '2017-06-08 11:00:23',
-          preview:
-              '阿第克法拉第考虑是否就爱看十点零分短发的首付贷款首付骄傲劳动节快乐'
-        }
-      ]
+      articalList: []
     }
+  },
+  methods: {
+    articalDetail (id) {
+      this.$axios.get(`/api/articalDetail/${id}`).then(response => {
+        let res = response.data
+        if (res.success) {
+          this.$store.commit('artical/setCurrentArtical', res.data)
+        } else {
+          this.$message(res.error)
+        }
+      })
+    }
+  },
+  beforeCreate () {
+    this.$axios.get('/api/articalList').then(response => {
+      let data = response.data
+      if (data.success) {
+        this.articalList = data.data
+      } else {
+        this.$message(data.error)
+      }
+    })
   }
 }
 </script>
@@ -76,5 +83,6 @@ export default {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    word-break: break-all;
   }
 </style>

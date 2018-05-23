@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import axios from 'axios'
+import customAxios from '@/util/customAxios'
 
 import store from '@/store/'
 import router from '@/router/'
@@ -14,10 +14,7 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 
-axios.defaults.baseURL = 'http://localhost:8527'
-axios.interceptors.request.use(null, (e) => console.log(e))
-axios.interceptors.response.use(null, (e) => console.log(e))
-Vue.prototype.$axios = axios
+Vue.prototype.$axios = customAxios
 
 /* eslint-disable no-new */
 new Vue({
