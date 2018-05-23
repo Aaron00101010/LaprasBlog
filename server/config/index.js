@@ -21,9 +21,12 @@ const CORSConfig = {
   headers: 'Content-Type, Accept, Authorization'
 };
 
+const jwtSecret = 'Koa';
+
 module.exports = {
   databaseName,
   databaseConnectConfig,
   CORSConfig,
-  serverConfig
+  serverConfig,
+  jwtSecret
 };
