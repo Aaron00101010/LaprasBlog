@@ -29,7 +29,7 @@
 import {mapState} from 'vuex'
 export default {
   name: 'MEditorSetting',
-  data () {
+  data: function () {
     return {
 
     }
@@ -67,23 +67,23 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .setting-wrapper {
-    padding: 10px 20px 10px 10px;
-  }
-  .tag-selector {
-    width: 100%;
-  }
-  .operate-btns {
-    align-self: flex-end;
-  }
-  .el-dropdown-link {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  .el-dropdown-menu {
-    margin-top: -5px;
-  }
+.setting-wrapper {
+  padding: 10px 20px 10px 10px;
+}
+.tag-selector {
+  width: 100%;
+}
+.operate-btns {
+  align-self: flex-end;
+}
+.el-dropdown-link {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.el-dropdown-menu {
+  margin-top: -5px;
+}
 </style>

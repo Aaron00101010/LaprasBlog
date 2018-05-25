@@ -3,10 +3,10 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import customAxios from '@/util/customAxios'
+import customAxios from '@/utils/customAxios'
 
 import store from '@/store/'
-import router from '@/router/'
+import router from '@/routers/'
 
 import App from '@/App'
 
