@@ -6,8 +6,8 @@
           <el-input placeholder="请输入文章标题" v-model="title"></el-input>
         </el-col>
         <el-col :span="12" :offset="1">
-          <el-select class="tag-selector" v-model="tags.tagList" multiple filterable allow-create default-first-option placeholder="请选择文章标签">
-            <el-option v-for="item in tags.options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+          <el-select class="tag-selector" v-model="elTags.tagList" multiple filterable allow-create default-first-option placeholder="请选择文章标签">
+            <el-option v-for="item in elTags.options" :key="item.value" :label="item.label" :value="item.value"></el-option>
           </el-select>
         </el-col>
       </el-col>
@@ -26,12 +26,19 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
   name: 'MEditorSetting',
   data () {
     return {
-      title: '',
-      tags: {
+
+    }
+  },
+  computed: {
+    ...mapState('artical', ['title', 'tags']),
+    elTags: function () {
+      let tagList = this.tags ? this.tags.split(' ') : []
+      return {
         options: [
           {
             value: 'HTML',
@@ -46,8 +53,15 @@ export default {
             label: 'JavaScript'
           }
         ],
-        tagList: []
+        tagList
       }
+    }
+  },
+  method: {
+  },
+  watch: {
+    elTags () {
+      this.$store.commit('artical/updateCurrentArtical', this.elTags)
     }
   }
 }

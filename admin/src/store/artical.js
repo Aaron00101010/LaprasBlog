@@ -1,11 +1,17 @@
 export default {
   namespaced: true,
   state: {
-    currentArtical: {}
+    currentArtical: {
+      id: '',
+      title: '',
+      tags: '',
+      content: '',
+      isPublish: ''
+    }
   },
   mutations: {
-    setCurrentArtical (state, obj) {
-      state.currentArtical = obj
+    updateCurrentArtical (state, obj) {
+      state.currentArtical = Object.assign(state.currentArtical, obj)
     }
   }
 }

@@ -25,7 +25,7 @@ export default {
       this.$axios.get(`/api/articalDetail/${id}`).then(response => {
         let res = response.data
         if (res.success) {
-          this.$store.commit('artical/setCurrentArtical', res.data)
+          this.$store.commit('artical/updateCurrentArtical', res.data)
         } else {
           this.$message(res.error)
         }
