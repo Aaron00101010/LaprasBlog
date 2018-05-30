@@ -36,7 +36,10 @@ export default {
             this.$router.push({ name: 'editor' })
             localStorage.setItem('elpsycongroo', res.token)
           } else {
-            console.log(res.error)
+            this.$message({
+              message: res.error,
+              type: 'warning'
+            })
           }
         })
     }

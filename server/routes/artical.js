@@ -6,11 +6,8 @@ const controller = require('../controllers/artical');
 const router = new Router();
 
 router
-  .get('/api/articalList', checkToken, async ctx => {
-    ctx.body = await controller.getArticalList();
-  })
-  .get('/api/articalDetail/:id', checkToken, async ctx => {
-    ctx.body = await controller.getArticalDetail(ctx.params.id);
-  });
+  .get('/api/articalList', checkToken, async ctx =>await controller.getArticalList(ctx))
+  .get('/api/articalDetail/:id', checkToken, async ctx =>await controller.getArticalDetail(ctx) )
+  .post('/api/updateArtical', checkToken, async ctx => await controller.updateArtical(ctx));
 
 module.exports = router;

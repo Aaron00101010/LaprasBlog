@@ -4,7 +4,7 @@
       <el-button type="warning">新建文章</el-button>
     </div>
     <ul class="list">
-      <li class="list-item" @click="articalDetail(item.id)" v-for="item in articalList" :key="item.id">
+      <li class="list-item" :class='{active:activeIndex===item.id}' @click="articalDetail(item.id);activeIndex=item.id" v-for="item in articalList" :key="item.id">
         <p class="artical-title">{{item.title}}</p>
         <p class="artical-date">{{item.createTime}}</p>
         <p class="artical-preview">{{item.preview}}</p>
@@ -17,7 +17,8 @@ export default {
   name: 'MEditorArticalList',
   data () {
     return {
-      articalList: []
+      articalList: [],
+      activeIndex: void 0
     }
   },
   methods: {
@@ -55,7 +56,11 @@ export default {
     &:hover {
       background-color: #eee;
     }
+    &.active {
+      background-color: #eee;
+    }
   }
+
   .add-artical {
     padding: 10px;
     border-bottom: 1px solid #eee;

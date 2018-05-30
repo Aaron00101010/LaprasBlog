@@ -14,13 +14,20 @@ customAxios.interceptors.request.use(config => {
 
 customAxios.interceptors.response.use(null, err => {
   if (err.response.status === 404) {
-    Message.error({ message: '服务器已瘫痪，进入自爆模式！' })
+    Message.error({ message: '404:跃迁至未知区域！' })
   } else if (err.response.status === 401) {
-    Message.error({ message: 'token校验失败' })
+    Message.error({ message: '401:口也屎啦，token校验已失败，重新登录已启动' })
+    setTimeout(() => {
+      window.location = '/'
+    }, 1500)
   } else if (err.response.status === 500) {
-    Message.error({ message: '服务器出错了！' })
+    Message.error({
+      message: '500:服务器又出错了，生意又不会做，只能写写bug维持生活的样子'
+    })
   } else {
-    Message.error({ message: '未知错误!' })
+    Message.error({
+      message: `${err.response.status}:it is a feature，not a bug，未知错误!`
+    })
   }
   return Promise.reject(err)
 })
