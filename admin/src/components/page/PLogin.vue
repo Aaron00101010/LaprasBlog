@@ -1,9 +1,7 @@
 <template>
   <div class="login-wrapper">
     <el-card class="box-card">
-      <router-link to='/home'>
       <h2 class="login-tit">登录</h2>
-      </router-link>
       <form>
         <el-input v-model="userName" placeholder="请输入用户名"></el-input>
         <el-input type="password" v-model="password" placeholder="请输入密码"></el-input>
@@ -27,7 +25,7 @@ export default {
   methods: {
     login () {
       this.$axios
-        .post('/login', {
+        .post('/public/login', {
           userName: this.userName,
           password: this.password
         })
@@ -36,8 +34,12 @@ export default {
           if (res.success) {
             this.$store.commit('user/login')
             this.$router.push({ name: 'editor' })
+            localStorage.setItem('elpsycongroo', res.token)
           } else {
-            console.log(res.error)
+            this.$message({
+              message: res.error,
+              type: 'warning'
+            })
           }
         })
     }

@@ -11,10 +11,12 @@
   "license": "MIT",
   "dependencies": {
     "glob": "^7.1.2",
+    "jsonwebtoken": "^8.2.1",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.0",
     "koa-cors": "0.0.16",
     "koa-jwt": "^3.3.2",
+    "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "md5": "^2.2.1",
     "mysql": "^2.15.0"
