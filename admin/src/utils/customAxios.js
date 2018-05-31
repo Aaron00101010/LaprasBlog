@@ -14,9 +14,9 @@ customAxios.interceptors.request.use(config => {
 
 customAxios.interceptors.response.use(null, err => {
   if (err.response.status === 404) {
-    Message.error({ message: '404:跃迁至未知区域！' })
+    Message.error({ message: '404:口也屎啦，跃迁至未知区域！' })
   } else if (err.response.status === 401) {
-    Message.error({ message: '401:口也屎啦，token校验已失败，重新登录已启动' })
+    Message.error({ message: '401:token校验已失败，重新登录已启动' })
     setTimeout(() => {
       window.location = '/'
     }, 1500)

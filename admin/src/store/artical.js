@@ -4,7 +4,7 @@ export default {
     currentArtical: {
       id: '',
       title: '',
-      tags: null,
+      tags: '',
       content: '',
       isPublish: ''
     }

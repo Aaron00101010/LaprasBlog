@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "dayjs": "^1.6.4",
     "element-ui": "^2.3.8",
     "mavon-editor": "^2.6.3",
     "node-sass": "^4.9.0",

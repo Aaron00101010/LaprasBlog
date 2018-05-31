@@ -23,10 +23,15 @@ const CORSConfig = {
 
 const jwtSecret = 'Koa';
 
+const articalConfig = {
+  previewTextLength: 150
+};
+
 module.exports = {
   databaseName,
   databaseConnectConfig,
   CORSConfig,
   serverConfig,
-  jwtSecret
+  jwtSecret,
+  articalConfig
 };
