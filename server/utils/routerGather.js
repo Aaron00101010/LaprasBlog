@@ -1,4 +1,4 @@
-const glob = require('glob');
+const glob = require('glob')
 /**
  *
  *
@@ -6,18 +6,18 @@ const glob = require('glob');
  * @param {String} dir
  * @returns {Promise} routerList | ErrorInfo
  */
-module.exports = function(dir) {
-  return new Promise((res, rej) => {
-    const routerList = [];
+module.exports = function (dir) {
+  return new Promise((resolve, reject) => {
+    const routerList = []
     glob(`${dir}/*`, { ignore: '**/index.js' }, (err, files) => {
       if (err) {
-        rej(error);
+        reject(err)
       }
       files.forEach(file => {
-        const router = require(file);
-        routerList.push(router);
-      });
-      res(routerList);
-    });
-  });
-};
+        const router = require(file)
+        routerList.push(router)
+      })
+      resolve(routerList)
+    })
+  })
+}

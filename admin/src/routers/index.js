@@ -27,6 +27,16 @@ const routes = [
     component: PLogin
   },
   {
+    name: 'loginout',
+    path: '/loginout',
+    component: PLogin,
+    beforeEnter (to, from, next) {
+      localStorage.clear()
+      store.commit('user/logout')
+      next({name: 'login'})
+    }
+  },
+  {
     path: '*',
     component: {
       template: '<h3>404</h3>'

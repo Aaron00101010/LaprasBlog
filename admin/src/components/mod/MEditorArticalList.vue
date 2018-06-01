@@ -17,6 +17,7 @@
 </template>
 <script>
 import dayjs from 'dayjs'
+import { mapMutations, mapState } from 'vuex'
 export default {
   name: 'MEditorArticalList',
   data () {
@@ -33,6 +34,7 @@ export default {
           var data = res.data
           data.content = data.content === 'null' ? '' : data.content
           this.$store.commit('artical/updateCurrentArtical', res.data)
+          this.$store.commit('artical/setLastArticalID', id)
         } else {
           this.$message(res.error)
         }
@@ -56,25 +58,44 @@ export default {
         })
     },
     getArticalList () {
-      this.$axios.get('/api/articalList').then(response => {
-        let data = response.data
-        if (data.success) {
-          var arr = data.data
-          arr.forEach(item => {
-            item.createTime = dayjs(item.createTime).format(
-              'YYYY/MM/DD HH:mm:ss'
-            )
-            for (let key in item) {
-              if (item[key] === 'null') item[key] = ''
-            }
-          })
-          this.articalList = arr
-          this.activeIndex = this.articalList[0].id
-          this.articalDetail(this.activeIndex)
-        } else {
-          this.$message(data.error)
-        }
-      })
+      return this.$axios
+        .get('/api/articalList')
+        .then(response => {
+          let data = response.data
+          if (data.success) {
+            var arr = data.data
+            arr.forEach(item => {
+              item.createTime = dayjs(item.createTime).format(
+                'YYYY/MM/DD HH:mm:ss'
+              )
+              for (let key in item) {
+                if (item[key] === 'null') item[key] = ''
+              }
+            })
+            this.articalList = arr
+            var storeID = this.$store.state.artical.lastArticalID
+            this.activeIndex = storeID || this.articalList[0].id
+            this.articalDetail(this.activeIndex)
+          } else {
+            this.$message(data.error)
+          }
+        })
+        .catch(val => this.$message(val))
+    },
+    ...mapMutations('artical', ['resetRefreshArticalListFlag'])
+  },
+  computed: {
+    ...mapState('artical', {
+      refreshFlag: state => state.refreshArticalListFlag
+    })
+  },
+  watch: {
+    refreshFlag: function (val) {
+      if (val === true) {
+        this.getArticalList().then(() => {
+          this.resetRefreshArticalListFlag()
+        })
+      }
     }
   },
   created () {
@@ -85,9 +106,9 @@ export default {
 <style lang="scss" scoped>
   .artical-list-wrapper {
     height: 100vh;
+    border-right: none;
   }
   .list {
-    border-right: 1px solid #eee;
     overflow: auto;
     height: calc(100vh - 60px);
   }

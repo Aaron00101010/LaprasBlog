@@ -1,11 +1,11 @@
-function escapeObj(obj){
-  for(let key in obj){
+function escapeObj (obj) {
+  for (let key in obj) {
     obj[key] = escape(obj[key])
   }
 }
 
-function unescapeObj(obj){
-  for(let key in obj){
+function unescapeObj (obj) {
+  for (let key in obj) {
     obj[key] = unescape(obj[key])
   }
 }

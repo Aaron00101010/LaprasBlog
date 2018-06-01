@@ -1,12 +1,9 @@
-const Router = require('koa-router');
+const Router = require('koa-router')
 
-const controller = require('../controllers/login');
+const controller = require('../controllers/login')
 
-const router = new Router();
+const router = new Router()
 
-router.post('/public/login', async ctx => {
-  const { userName, password } = ctx.request.body;
-  ctx.body = await controller.verifyUser({ userName, password });
-});
+router.post('/public/login', async ctx => { await controller.verifyUser(ctx) })
 
-module.exports = router;
+module.exports = router
