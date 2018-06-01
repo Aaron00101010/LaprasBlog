@@ -3,7 +3,9 @@
     <el-row type="flex" justify='space-between'>
       <el-col :span="18">
         <el-col :span="7">
-          <el-input placeholder="请输入文章标题" v-model="title"></el-input>
+          <el-input placeholder="请输入文章标题" v-model="title">
+             <template slot="prepend">标题</template>
+          </el-input>
         </el-col>
         <el-col :span="7" :offset="1">
           <el-select class="tag-selector" v-model="tagList" multiple filterable allow-create default-first-option placeholder="请选择文章标签">
