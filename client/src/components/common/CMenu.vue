@@ -33,69 +33,56 @@
 </template>
 
 <script>
-    const menuList = [
-      {
-        name: 'Home',
-        index: 0,
-        link: { name: 'articalList' }
-      },
-      {
-        name: 'Archive',
-        index: 1,
-        link: { name: 'archive' }
-      },
-      {
-        name: 'Tags',
-        index: 2,
-        link: { name: 'tags' }
-      },
-      {
-        name: 'About',
-        index: 3,
-        link: { name: 'about' }
-      }
-    ]
+const menuList = [
+  {
+    name: 'Home',
+    index: 0,
+    link: { name: 'articalList' }
+  },
+  {
+    name: 'Archive',
+    index: 1,
+    link: { name: 'archive' }
+  },
+  {
+    name: 'Tags',
+    index: 2,
+    link: { name: 'tags' }
+  },
+  {
+    name: 'About',
+    index: 3,
+    link: { name: 'about' }
+  }
+]
 
-    export default {
-      name: 'c-menu',
-      data: function() {
-        return {
-          activeIndex: 0,
-          mobileMenuActive: false,
-          menuList
-        }
-      },
-      methods: {
-        setIndex(index) {
-          this.activeIndex = index
-        },
-        toggleMenu() {
-          this.mobileMenuActive = !this.mobileMenuActive
-        }
-      }
+export default {
+  name: 'c-menu',
+  data: function () {
+    return {
+      activeIndex: 0,
+      mobileMenuActive: false,
+      menuList
     }
+  },
+  methods: {
+    setIndex (index) {
+      this.activeIndex = index
+    },
+    toggleMenu () {
+      this.mobileMenuActive = !this.mobileMenuActive
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-<<<<<<< HEAD
-    @import '@/css/var.scss';
-=======
     @import "@/css/var.scss";
->>>>>>> dev
     .wrapper {
         box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
         background-color: $primary-color-text;
     }
     .nav-con {
-<<<<<<< HEAD
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 auto;
-      max-width: $page-max-width;
-      padding: 0 15px;
-      height: 44px;
-=======
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -104,7 +91,6 @@
         padding: 0 15px;
         height: 44px;
     }
->>>>>>> dev
     .wrapper {
         box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
         background-color: $primary-color-text;
@@ -261,5 +247,5 @@
             }
         }
     }
-}
+
 </style>

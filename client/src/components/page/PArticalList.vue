@@ -1,16 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class='artical-list-box'>
-        artical-list1
-    </div>
-</template>
-<script>
-    export default {
-      name: 'PArticalList'
-    }
-</script>
-<style lang="scss" scoped>
-=======
     <div class="content-wrapper">
         <div class='artical-list-box'>
             <m-artical-item></m-artical-item>
@@ -29,17 +17,17 @@
     </div>
 </template>
 <script>
-    import MArticalItem from '@/components/mod/MArticalItem'
-    import MAboutMe from '@/components/mod/MAboutMe'
-    import MLinks from '@/components/mod/MLinks'
-    export default {
-      name: 'PArticalList',
-      components: {
-        MArticalItem,
-        MAboutMe,
-        MLinks
-      }
-    }
+import MArticalItem from '@/components/mod/MArticalItem'
+import MAboutMe from '@/components/mod/MAboutMe'
+import MLinks from '@/components/mod/MLinks'
+export default {
+  name: 'PArticalList',
+  components: {
+    MArticalItem,
+    MAboutMe,
+    MLinks
+  }
+}
 </script>
 <style lang="scss" scoped>
     @import '@/css/var.scss';
@@ -77,5 +65,4 @@
         display: none;
       }
     }
->>>>>>> dev
 </style>
