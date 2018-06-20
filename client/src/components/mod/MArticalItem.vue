@@ -1,14 +1,6 @@
 <template>
     <div class="artical-item">
-        <h2 class="item__tit">{{title}}</h2>
-        <h4 class="item__subtit">{{subtit}}</h4>
-        <div class="item__date">
-            <span v-if='date'>date:2017-08-26 </span>
-            <span v-if='update'>update: 2017-08-25</span>
-        </div>
-        <section class="item__preview">
-            {{preview}}
-        </section>
+      item
     </div>
 </template>
 <script>
@@ -28,38 +20,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-    @import "@/css/var.scss";
-    .artical-item {
-        background-color: #fff;
-        padding: 20px 20px;
-        box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
-        margin-bottom: 10px;
-    }
-    .item__tit {
-        color: $primary-text-color;
-        line-height: 1.5;
-        font-size: 24px;
-        font-weight: normal;
-        line-height: 1;
-        margin-bottom: 15px;
-    }
-    .item__subtit {
-        color: $secondary-text-color;
-        font-size: 18px;
-        margin-bottom: 5px;
-        font-weight: lighter;
-        line-height: 1;
-        margin-bottom: 15px;
-    }
-    .item__date {
-        color: $secondary-text-color;
-        line-height: 1;
-    }
-    .item__preview {
-        padding: 15px 0 0;
-    }
-    .item__link {
-        color: $primary-color;
-    }
-</style>

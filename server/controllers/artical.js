@@ -14,6 +14,15 @@ class ArticalControllers {
       }
     })
   }
+  async getClientArticalList (ctx) {
+    await model.getClientArticalList().then(value => {
+      value.forEach(item => unescapeObj(item))
+      ctx.body = {
+        success: true,
+        data: value
+      }
+    })
+  }
   async getArticalDetail (ctx) {
     await model.getArticalDetail(ctx.params.id).then(value => {
       if (value.length === 0) {

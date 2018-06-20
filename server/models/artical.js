@@ -7,6 +7,12 @@ class Artical {
     )
     return res
   }
+  async getClientArticalList (userName) {
+    const res = await queryDatabase(
+      `SELECT id,title,preview,createTime,isPublish FROM artical WHERE isPublish=true ORDER BY id DESC`
+    )
+    return res
+  }
   async getArticalDetail (id) {
     const res = await queryDatabase(
       `SELECT id,title,content,tags,isPublish FROM artical WHERE id='${escape(id)}'`
