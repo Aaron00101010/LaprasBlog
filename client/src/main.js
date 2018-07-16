@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router/'
 import './css/common.scss'
+import customAxios from './utils/customAxios'
 
 Vue.config.productionTip = false
+
+Vue.prototype.$axios = customAxios
 
 /* eslint-disable no-new */
 new Vue({

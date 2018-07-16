@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'CFooter',
-  data: function () {
+  data: function() {
     return {
       currentYear: new Date().getFullYear()
     }
@@ -25,5 +25,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   font-size: 12px;
+  color: #888;
 }
 </style>

@@ -10,12 +10,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'articalList',
       component: PArticalList
     },
     {
       path: '/artical/:id',
-      name: 'artical',
       component: PArtical
     }
   ],

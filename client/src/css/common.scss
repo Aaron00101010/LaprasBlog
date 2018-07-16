@@ -1,18 +1,110 @@
-@import "@/css/var.scss";
+@import '@/css/var.scss';
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 冬青黑, 'Microsoft YaHei', 微软雅黑, SimSun, 宋体, Helvetica,
+    Tahoma, 'Arial sans-serif';
 }
-html,
-body {
-  height: 100%;
+html {
+  min-height: 100%;
   background-color: $bg-color;
-  font-family: "Microsoft YaHei", "san-serf";
 }
+body {
+  min-height: 100%;
+}
+
 a {
   text-decoration: none;
 }
 li {
   list-style: none;
+}
+.code-block code {
+  background-color: #eee;
+  margin: 10px 0;
+}
+.code-block code::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.code-block code::-webkit-scrollbar-button,
+.code-block code::-webkit-scrollbar-track {
+  display: none;
+}
+.code-block code::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 4px;
+}
+.code-block code::-webkit-scrollbar-button,
+.code-block code::-webkit-scrollbar-track {
+  display: none;
+}
+.code-block code::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+.code-block {
+  border-radius: 4px;
+  position: relative;
+  &::before {
+    content: attr(lang);
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  & * {
+    border-radius: 4px;
+    font-size: 14px !important;
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier,
+      monospace !important;
+  }
+}
+
+.markdown-wrapper {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 2.5;
+    font-weight: normal;
+    color: #333;
+  }
+  & > p {
+    margin: 10px 0;
+    color: #444;
+  }
+  img {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+  & > p > code,
+  & > blockquote code {
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-size: 80%;
+    margin: 0 2px;
+    padding: 4px 5px;
+    background-color: #ddd;
+    vertical-align: middle;
+    border-radius: 5px;
+  }
+  blockquote {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5d6a6a;
+    padding: 0.6em;
+    border-left: 5px solid #ccc;
+    background-color: #eee;
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0;
+  }
 }
