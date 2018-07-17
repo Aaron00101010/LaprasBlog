@@ -1,34 +1,24 @@
 <template>
   <div class="artical-item">
     <div class="top-part">
-      <a href="">{{title}}</a>
-      <span>{{new Date(date).toDateString()}}</span>
+      <a href="javascript:void(0)" @click="$router.push(`/artical/${articalData.id}`)">{{articalData.title}}</a>
+      <span v-if="articalData.publishTime!=='null'">{{new Date(articalData.publishTime).toDateString()}}</span>
     </div>
     <div class="perview" v-html="parsedMarkdown"></div>
     <div class="read-more">
-      <a href="read-more">继续阅读 »</a>
+      <a href="javascript:void(0)" @click="$router.push(`/artical/${articalData.id}`)">继续阅读 »</a>
     </div>
   </div>
 </template>
 <script>
 import { marked } from '@/utils/parse-markdown'
-const itemData = {
-  id: 1,
-  title: '哈哈哈哈哈哈啊哈哈',
-  date: '2017-02-03',
-  update: '2017-03-06',
-  preview:
-    "## 123 \n ![](http://placehold.it/100x100) \n ```js \n const model = require('../models/artical'); \n const {escapeObj,unescapeObj} = require('../utils/escape') \n class ArticalControllers { async getArticalList(ctx) { await model.getArticalList().then(value => { value.forEach(item=>unescapeObj(item)) ctx.body = { success: true, data: value }; }); } async getArticalDetail(ctx) { await model.getArticalDetail(ctx.params.id).then(value => { if (value.length === 0) { ctx.body = { success: false, err ```"
-}
 
 export default {
   name: 'artical-item',
-  data() {
-    return itemData
-  },
+  props: ['articalData'],
   computed: {
     parsedMarkdown() {
-      return marked(this.preview)
+      return marked(this.articalData.preview)
     }
   }
 }
@@ -40,18 +30,22 @@ export default {
   word-break: break-all;
 }
 .top-part {
+  overflow: hidden;
   a {
     color: #333;
-    transition: color 0.3s;
+    transition: transform 0.3s;
     font-size: 2em;
     font-weight: 300;
     line-height: 35px;
+    display: block;
+    float: left;
+    color: seagreen;
     &:hover {
-      color: seagreen;
+      transform: translateX(3px);
+      text-decoration: none;
     }
   }
   span {
-    position: relative;
     float: right;
     color: #666;
     font-size: 1em;
@@ -73,9 +67,6 @@ export default {
   margin-top: 15px;
   a {
     color: seagreen;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 </style>

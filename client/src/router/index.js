@@ -15,6 +15,10 @@ export default new Router({
     {
       path: '/artical/:id',
       component: PArtical
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ],
   scrollBehavior (to, from, savePosition) {

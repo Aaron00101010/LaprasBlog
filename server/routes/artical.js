@@ -28,8 +28,12 @@ router
     await controller.deleteArtical(ctx);
   });
 //client
-router.get('/api/client/articalList', checkToken, async ctx => {
-  await controller.getClientArticalList(ctx);
-});
+router
+  .get('/public/articalList', async ctx => {
+    await controller.getClientArticalList(ctx);
+  })
+  .get('/public/artical/:id', async ctx => {
+    await controller.getClientArticalDetail(ctx);
+  });
 
 module.exports = router;

@@ -45,24 +45,25 @@ export default {
 }
 #app {
   width: 750px;
+  max-width: 90%;
   margin: 0 auto;
 }
 .header {
-  height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   h3 {
-    font-size: 25px;
+    font-size: 32px;
     line-height: 2.5;
     font-weight: 600;
     display: inline-block;
     color: #333;
+    padding-right: 1em;
   }
   span {
     color: #777;
     font-size: 14px;
     display: inline-block;
     vertical-align: middle;
-    padding-left: 20px;
+    line-height: 1;
   }
 }
 </style>

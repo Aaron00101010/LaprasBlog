@@ -15,7 +15,11 @@ body {
 }
 
 a {
+  color: seagreen;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 li {
   list-style: none;
@@ -43,10 +47,12 @@ li {
 .code-block code::-webkit-scrollbar-track-piece {
   background: transparent;
 }
-
 .code-block {
   border-radius: 4px;
   position: relative;
+  & > code {
+    padding: 20px;
+  }
   &::before {
     content: attr(lang);
     position: absolute;
@@ -75,9 +81,17 @@ li {
     font-weight: normal;
     color: #333;
   }
-  & > p {
+  p {
     margin: 10px 0;
     color: #444;
+    line-height: 1.8;
+  }
+  ul {
+    padding-left: 2em;
+  }
+  li {
+    line-height: 1.8;
+    list-style: disc;
   }
   img {
     max-width: 100%;
