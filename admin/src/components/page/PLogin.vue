@@ -55,6 +55,19 @@ export default {
   .login-wrapper {
     display: flex;
     justify-content: center;
+    animation-name: html_page;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes html_page {
+    0% {
+      transform-origin: 50% 50%;
+      transform: rotate3d(0, 1, 0, 720deg) rotateZ(45deg) scale(0);
+    }
+
+    100% {
+      transform: rotate3d(0, 1, 0, 0) rotateZ(0) scale(1);
+    }
   }
   .login-tit {
     margin-bottom: 20px;

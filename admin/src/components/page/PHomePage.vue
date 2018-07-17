@@ -4,8 +4,8 @@
       <router-link :to="{name:'editor'}">
         <div class="menu-item">📄</div>
       </router-link>
-      <router-link :to="{name:'home'}">
-        <div class="menu-item">📦</div>
+      <router-link :to="{name:'loginout'}">
+        <div class="menu-item">🔚</div>
       </router-link>
     </el-aside>
     <el-main class="content">
@@ -37,6 +37,9 @@ export default {
     font-size: 20px;
     text-align: center;
     padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .content{
     padding: 0;

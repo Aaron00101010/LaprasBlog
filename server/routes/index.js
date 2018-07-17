@@ -1,16 +1,16 @@
-const routerGather = require('../utils/routerGather');
+const routerGather = require('../utils/routerGather')
 
-function mountRouters(app) {
-  const routersList = routerGather(__dirname);
+function mountRouters (app) {
+  const routersList = routerGather(__dirname)
   routersList
-    .then(function(routersList) {
+    .then(function (routersList) {
       routersList.forEach(router => {
-        app.use(router.routes());
-      });
+        app.use(router.routes())
+      })
     })
-    .catch(function(err) {
-      console.log(err);
-    });
+    .catch(function (err) {
+      console.log(err)
+    })
 }
 
-module.exports = mountRouters;
+module.exports = mountRouters

@@ -1,70 +1,74 @@
 <template>
-<<<<<<< HEAD
-    
-</template>
-=======
-    <div class="artical-item">
-        <h2 class="item__tit">{{title}}</h2>
-        <h4 class="item__subtit">{{subtit}}</h4>
-        <div class="item__date">
-            <span v-if='date'>date:2017-08-26 </span>  
-            <span v-if='update'>update: 2017-08-25</span>
-        </div>
-        <section class="item__preview">
-            {{preview}}
-        </section>
+  <div class="artical-item">
+    <div class="top-part">
+      <a href="javascript:void(0)" @click="$router.push(`/artical/${articalData.id}`)">{{articalData.title}}</a>
+      <span v-if="articalData.publishTime!=='null'">{{new Date(articalData.publishTime).toDateString()}}</span>
     </div>
+    <div class="perview" v-html="parsedMarkdown"></div>
+    <div class="read-more">
+      <a href="javascript:void(0)" @click="$router.push(`/artical/${articalData.id}`)">继续阅读 »</a>
+    </div>
+  </div>
 </template>
 <script>
-    const itemData = {
-      id: 1,
-      title: '哈哈哈哈哈哈啊哈哈',
-      subtit: 'the quick brown fox jump over the lazy dog',
-      date: '2017-02-03',
-      update: '2017-03-06',
-      preview:
-        '达拉斯的风景阿萨德飞机撒开的房间爱上飞机上的可乐放进来撒打飞机奥斯卡的房间爱上飞机啊速度快解放路口时代峰峻萨克砥砺奋进'
+import { marked } from '@/utils/parse-markdown'
+
+export default {
+  name: 'artical-item',
+  props: ['articalData'],
+  computed: {
+    parsedMarkdown() {
+      return marked(this.articalData.preview)
     }
-    export default {
-      name: 'artical-item',
-      data() {
-        return itemData
-      }
-    }
+  }
+}
 </script>
 <style lang="scss" scoped>
-    @import "@/css/var.scss";
-    .artical-item {
-        background-color: #fff;
-        padding: 20px 20px;
-        box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
-        margin-bottom: 10px;
+.artical-item {
+  padding: 30px 0;
+  border-bottom: 1px solid #ddd;
+  word-break: break-all;
+  text-align: justify;
+}
+.top-part {
+  overflow: hidden;
+  a {
+    color: #333;
+    transition: transform 0.3s;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 35px;
+    display: block;
+    float: left;
+    color: seagreen;
+    &:hover {
+      transform: translateX(3px);
+      text-decoration: none;
     }
-    .item__tit {
-        color: $primary-text-color;
-        line-height: 1.5;
-        font-size: 24px;
-        font-weight: normal;
-        line-height: 1;
-        margin-bottom: 15px;
-    }
-    .item__subtit {
-        color: $secondary-text-color;
-        font-size: 18px;
-        margin-bottom: 5px;
-        font-weight: lighter;
-        line-height: 1;
-        margin-bottom: 15px;
-    }
-    .item__date {
-        color: $secondary-text-color;
-        line-height: 1;
-    }
-    .item__preview {
-        padding: 15px 0 0;
-    }
-    .item__link {
-        color: $primary-color;
-    }
+  }
+  span {
+    float: right;
+    color: #666;
+    font-size: 1em;
+    line-height: 2;
+    width: auto;
+    vertical-align: bottom;
+  }
+  margin-bottom: 25px;
+}
+.perview {
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  text-align: justify;
+  overflow: auto;
+}
+.read-more {
+  margin-top: 15px;
+  a {
+    color: seagreen;
+  }
+}
 </style>
->>>>>>> dev
+
