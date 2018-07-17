@@ -1,15 +1,15 @@
 const queryDatabase = require('../utils/queryDatabase');
 
 class Artical {
-  async getArticalList(userName) {
+  async getArticalList() {
     const res = await queryDatabase(
       `SELECT id,title,preview,createTime,isPublish FROM artical ORDER BY id DESC`
     );
     return res;
   }
-  async getClientArticalList(userName) {
+  async getClientArticalList(offset, limit) {
     const res = await queryDatabase(
-      `SELECT id,title,preview,createTime,publishTime FROM artical WHERE isPublish='true' ORDER BY id DESC`
+      `SELECT id,title,preview,createTime,publishTime FROM artical WHERE isPublish='true' ORDER BY id DESC LIMIT ${offset},${limit}`
     );
     return res;
   }
@@ -28,6 +28,11 @@ class Artical {
       )}'`
     );
     return res;
+  }
+  async getClientArticalLength() {
+    return await queryDatabase(
+      `SELECT COUNT(*) FROM artical WHERE isPublish='true'`
+    );
   }
   async updateArtical(obj) {
     const res = await queryDatabase(

@@ -28,6 +28,7 @@ export default {
   padding: 30px 0;
   border-bottom: 1px solid #ddd;
   word-break: break-all;
+  text-align: justify;
 }
 .top-part {
   overflow: hidden;

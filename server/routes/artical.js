@@ -29,7 +29,7 @@ router
   });
 //client
 router
-  .get('/public/articalList', async ctx => {
+  .get('/public/articalList/:page', async ctx => {
     await controller.getClientArticalList(ctx);
   })
   .get('/public/artical/:id', async ctx => {

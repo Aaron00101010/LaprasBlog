@@ -15,12 +15,25 @@ class ArticalControllers {
     });
   }
   async getClientArticalList(ctx) {
-    await model.getClientArticalList().then(value => {
+    const page = ctx.params.page;
+    let length, totalPage;
+    await model.getClientArticalLength().then(value => {
+      length = value[0]['COUNT(*)'];
+      totalPage = Math.ceil(length / 10);
+    });
+
+    let resp = {
+      pagenation: {
+        currentPage: Number(page),
+        totalPage
+      }
+    };
+    await model.getClientArticalList((page - 1) * 10, page * 10).then(value => {
       value.forEach(item => unescapeObj(item));
-      ctx.body = {
+      ctx.body = Object.assign(resp, {
         success: true,
         data: value
-      };
+      });
     });
   }
   async getArticalDetail(ctx) {

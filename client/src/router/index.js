@@ -9,19 +9,20 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      component: PArticalList
-    },
-    {
       path: '/artical/:id',
       component: PArtical
     },
     {
+      path: '/articalList/:page',
+      name: 'articalList',
+      component: PArticalList
+    },
+    {
       path: '*',
-      redirect: '/'
+      redirect: { name: 'articalList', params: { page: 1 } }
     }
   ],
-  scrollBehavior (to, from, savePosition) {
-    return savePosition
+  scrollBehavior () {
+    return { y: 0 }
   }
 })
