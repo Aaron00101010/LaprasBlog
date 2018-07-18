@@ -24,6 +24,7 @@
 </template>
 <script>
 import { marked } from '@/utils/parse-markdown'
+import { disqusURL } from '@/config/config'
 export default {
   data() {
     return {
@@ -65,9 +66,9 @@ export default {
             this.page.title = res.data.title
           }
 
-          var d = document,
+          var d = window.document,
             s = d.createElement('script')
-          s.src = 'https://aaron00101010-2.disqus.com/embed.js'
+          s.src = disqusURL
           s.setAttribute('data-timestamp', +new Date())
           ;(d.head || d.body).appendChild(s)
           s.onerror = () =>

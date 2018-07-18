@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { apiServer } from '@/config/config'
 
 const customAxios = axios.create({
-  baseURL: 'http://localhost:8527'
+  baseURL: apiServer
 })
 
 customAxios.interceptors.response.use(null, err => {
