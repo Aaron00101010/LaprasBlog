@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
+import { apiServer } from '@/config/config'
 
 const customAxios = axios.create({
-  baseURL: 'http://localhost:8527'
+  baseURL: apiServer
 })
 
 customAxios.interceptors.request.use(config => {
