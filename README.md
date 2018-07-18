@@ -10,7 +10,7 @@
 
 ![后台](https://ws1.sinaimg.cn/large/e3c02d6fly1fteeqsjv98j21h10qj45w.jpg)
 
-# 快速启动
+## 快速启动
 
 ### 客户端
 
@@ -32,6 +32,9 @@ export { disqusURL, apiServer };
 其他命令：参见`package.json`
 
 ### 后台
+
+初始账户：admin
+初始密码：admin
 
 ```bash
 cd admin && npm i
